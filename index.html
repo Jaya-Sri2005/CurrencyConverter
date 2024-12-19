@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="head"></div>
+    <header>
+        <div class="nav-bar">
+        <nav>           
+            <div class="links">
+            <a href="Currencies.html">Browse All Currencies</a>
+            <a href="Exchangerates.html">Exchange Rates</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle-btn"></button>
+        </nav>
+    </div>
+    </header>
+    <div class="head"></div>
+    <h1>Currency Converter</h1>
+    <p>Seamless Currency Conversion, Anytime, Anywhere!</p>
+    <div class="table">
+        <table>
+            <tr>
+                <td class="merge" >Amount</td>
+                <td class="merge" >From</td>
+                <td class="merge"><div style="padding-left: 50px;">To</div></td>
+            </tr>
+            <tr>
+                <td class="merge-next"><input type="number" id="amount" placeholder="Enter Amount"></td>
+                <td class="merge-next">
+                    <select id="fromCurrency"></select>
+                </td>
+                <td class="merge-next" style="display: flex; align-items: center; gap: 10px; ">
+                    <button onclick="swapCurrencies()" class="swap-btn">⇆</button>
+                    <select id="toCurrency"></select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" id="result"></td>
+            <td class="btn">
+                <button class="convert-btn">Convert</button>
+            </td>
+            </tr>
+    </table>
+    </div>
+    <section class="converter-info">
+        <h2>How Does the Currency Converter Work?</h2>
+        <p>Our currency converter helps you seamlessly convert any amount of money between over 140 global currencies. With just a few simple steps, you can quickly check the exchange rates and convert your money at real-time, mid-market rates—no hidden fees, no markups.</p>
+        <p>To use the converter, simply enter the amount you wish to convert, choose your source and target currencies from the dropdown menus, and hit the convert button. Our tool will calculate the exact value of your amount in the desired currency, using the same exchange rate you’d find in financial markets or currency tracking apps.</p>
+        <p>The currency converter is powered by live market data, ensuring that you always get up-to-date and accurate exchange rates for all your transactions. Whether you’re planning a trip, sending money abroad, or just checking current rates, our tool ensures you're making informed decisions with the most accurate values available.</p>
+    </section>
+
+<div class="features">
+    <h2>Why Choose Our Currency Converter?</h2>
+    <ul>
+        <li><strong>Real-Time Exchange Rates:</strong> Get accurate and up-to-date exchange rates for over 100 currencies.</li>
+        <li><strong>Intuitive Design:</strong> Our converter is easy to use, with a seamless interface and quick navigation.</li>
+        <li><strong>Global Reach:</strong> Convert currencies across multiple countries with ease.</li>
+        <li><strong>Secure & Reliable:</strong> Your data is secure with us, ensuring safe and accurate currency conversions.</li>
+        <li><strong>24/7 Availability:</strong> Access the converter any time, anywhere, on both desktop and mobile.</li>
+        <li><strong>Currency Insights:</strong> Access insights and trends for various currencies to make informed financial decisions.</li>
+        <li><strong>Historical Data:</strong> View historical exchange rates to analyze trends and plan transactions accordingly.</li>
+        <li><strong>Multi-Language Support:</strong> Our converter is accessible in multiple languages, catering to a global audience.</li>
+        <li><strong>Quick Currency Swaps:</strong> Easily swap your chosen currencies with a single click, simplifying the conversion process.</li>
+        <li><strong>API Integration:</strong> Ideal for businesses and developers looking to integrate our currency converter into their applications.</li>
+        <li><strong>Rate Alerts:</strong> Get notified when your desired exchange rate is reached, helping you make the most of your conversions.</li>
+    </ul>
+</div>
+
+<!-- Frequently Asked Questions (FAQ) Section -->
+<div class="faq">
+    <h2>Frequently Asked Questions (FAQs)</h2>
+    <div class="faq-item">
+        <button class="faq-question">1. How accurate are the exchange rates?</button>
+        <div class="faq-answer">
+            <p class="c">The exchange rates are updated every minute using reliable financial data sources, ensuring accurate and real-time conversions.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">2. Can I convert multiple currencies at once?</button>
+        <div class="faq-answer">
+            <p class="c">Currently, our converter supports converting between two currencies at a time. However, we are working on adding multi-currency conversion in the future!</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">3. Is this currency converter available for mobile devices?</button>
+        <div class="faq-answer">
+            <p class="c">Yes, our currency converter is fully responsive and can be accessed from mobile devices, making it convenient for on-the-go conversions.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">4. Do you offer historical exchange rate data?</button>
+        <div class="faq-answer">
+            <p class="c">Yes, we provide historical exchange rate data, allowing you to analyze trends and make informed decisions based on past market performance.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">5. Can I set up rate alerts?</button>
+        <div class="faq-answer">
+            <p class="c">Absolutely! You can set up rate alerts to be notified when your desired exchange rate is achieved, helping you get the best deals.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">6. How do I change the theme of the converter?</button>
+        <div class="faq-answer">
+            <p class="c">To toggle between light and dark mode, click on the theme toggle button located at the top-right corner of the page.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">7. Is this service free to use?</button>
+        <div class="faq-answer">
+            <p class="c">Yes, our currency converter is completely free to use. We offer basic conversion features at no charge, while premium services like API access are available for businesses.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">8. How can I contact support if I have issues with the converter?</button>
+        <div class="faq-answer">
+            <p class="c">If you experience any issues or have questions, feel free to reach out to our support team through the "Contact" link in the footer.</p>
+        </div>
+    </div>
+</div>
+ 
+
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a class="link" href="#">About Us</a>
+                <a class="link" href="#">Press</a>
+                <a class="link" href="#">Careers</a>
+                <a class="link" href="#">Service Status</a>
+                <a class="link" href="#">Investor Relations</a>
+                <a class="link" href="#">Mission & Roadmap</a>
+                <a class="link" href="#">Affiliates & Partnerships</a>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Products</h3>
+                <a class="link" href="#">Currency Converter</a>
+                <a class="link" href="#">Exchange Rate Tracker</a>
+                <a class="link" href="#">Currency Accounts</a>
+                <a class="link" href="#">International Transfers</a>
+                <a class="link" href="#">Travel Debit Card</a>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Business Solutions</h3>
+                <a class="link" href="#">Business Currency Accounts</a>
+                <a class="link" href="#">Mass Payments</a>
+                <a class="link" href="#">API Integrations</a>
+                <a class="link" href="#">Invoice Generator</a>
+                <a class="link" href="#">Currency Calculators</a>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <a class="link" href="#">Blog & News</a>
+                <a class="link" href="#">Research Center</a>
+                <a class="link" href="#">Currency Insights</a>
+                <a class="link" href="#">Compare Exchange Rates</a>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a class="link" href="#">Privacy Policy</a>
+                <a class="link" href="#">Cookie Policy</a>
+                <a class="link" href="#">Complaints</a>
+                <a class="link" href="#">Country Sitemap</a>
+                <a class="link" href="#">Regulatory Information</a>
+            </div>
+            <div class="footer-column">
+                <h3 style="margin-left: 40px;">Follow Us</h3>
+                <div class="social-links" style="display: flex;">
+                    <a href="#" class="link" aria-label="Follow us on Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="link" aria-label="Follow us on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="link" aria-label="Follow us on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="link" aria-label="Follow us on LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <p style="color:white; text-align: center; margin-top: 10px;">© Currency Converter 2024</p>
+            </div>
+        </div>
+       
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Exchange Rates</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #1b1b54;
+    }
+    
+    #exchange-rates-container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 5px;
+    }
+    
+    th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    
+    th {
+        background-color:  white;
+        color:#1b1b54 ;
+    }
+    
+    td {
+        color: white;
+    }
+    
+    h1{
+        text-align: center;
+        color:white;
+    }
+
+</style>    
+    <script>
+        async function fetchExchangeRates() {
+            try {
+                const response = await fetch("https://api.exchangerate-api.com/v4/latest/USD");
+                const data = await response.json();
+                const rates = data.rates;
+
+                const ratesBody = document.getElementById("exchange-rates-body");
+                ratesBody.innerHTML = ""; 
+        
+                Object.keys(rates).forEach(currency => {
+                    const rate = rates[currency];
+        
+                    const row = document.createElement("tr");
+                    const currencyCell = document.createElement("td");
+                    const rateCell = document.createElement("td");
+        
+                    currencyCell.textContent = currency;
+                    rateCell.textContent = rate.toFixed(4); 
+        
+                    row.appendChild(currencyCell);
+                    row.appendChild(rateCell);
+                    ratesBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Error fetching exchange rates:", error);
+            }
+        }
+        
+        fetchExchangeRates();
+        setInterval(fetchExchangeRates, 10000);
+        </script>
+</head>
+<body>
+    <header>
+        <h1>Live Exchange Rates</h1>
+    </header>
+
+    <div id="exchange-rates-container">
+        <table id="exchange-rates-table">
+            <thead>
+                <tr>
+                    <th>Currency</th>
+                    <th>Exchange Rate (1 USD)</th>
+                </tr>
+            </thead>
+            <tbody id="exchange-rates-body">
+            </tbody>
+        </table>
+    </div>  
+</body>
+</html>
